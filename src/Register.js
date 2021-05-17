@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const Register = () => {
   return (
     <>
@@ -25,30 +25,30 @@ export const Register = () => {
                     </div>
                     <div className="card-content">
                       <div className="text-center">
-                        <a
-                          href="#"
+                        <Link
+                          onTouchStartCapture="#"
                           className="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"
                         >
                           <span className="la la-facebook" />
-                        </a>
-                        <a
-                          href="#"
+                        </Link>
+                        <Link
+                          to="#"
                           className="btn btn-social-icon mr-1 mb-1 btn-outline-twitter"
                         >
                           <span className="la la-twitter" />
-                        </a>
-                        <a
-                          href="#"
+                        </Link>
+                        <Link
+                          to="#"
                           className="btn btn-social-icon mr-1 mb-1 btn-outline-linkedin"
                         >
                           <span className="la la-linkedin font-medium-4" />
-                        </a>
-                        <a
-                          href="#"
+                        </Link>
+                        <Link
+                          to="#"
                           className="btn btn-social-icon mr-1 mb-1 btn-outline-github"
                         >
                           <span className="la la-github font-medium-4" />
-                        </a>
+                        </Link>
                       </div>
                       <p className="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
                         <span>OR Using Email</span>
@@ -109,12 +109,12 @@ export const Register = () => {
                               </fieldset>
                             </div>
                             <div className="col-sm-6 col-12 float-sm-left text-center text-sm-right">
-                              <a
-                                href="recover-password.html"
+                              <Link
+                                to="recover-password.html"
                                 className="card-link"
                               >
                                 Forgot Password?
-                              </a>
+                              </Link>
                             </div>
                           </div>
                           <button
@@ -126,13 +126,13 @@ export const Register = () => {
                         </form>
                       </div>
                       <div className="card-body">
-                        <a
-                          href="login-with-bg-image.html"
+                        <Link
+                          to="/"
                           className="btn btn-outline-danger btn-block"
                         >
                           <i className="ft-unlock" />
                           Login
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

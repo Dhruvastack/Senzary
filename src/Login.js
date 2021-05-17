@@ -29,30 +29,30 @@ export const Login = () => {
                         <div className="text-center">
 
                           
-                          <a
-                            href=""
+                          <Link
+                            to="/register"
                             className="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"
                           >
                             <span className="la la-facebook" />
-                          </a>
-                          <a
-                            href="/hello"
+                          </Link>
+                          <Link
+                            to="/hello"
                             className="btn btn-social-icon mr-1 mb-1 btn-outline-twitter"
                           >
                             <span className="la la-twitter" />
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="https://twitter.com#"
                             className="btn btn-social-icon mr-1 mb-1 btn-outline-aedin"
                           >
                             <span className="la la-linkedin font-medium-4" />
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="#"
                             className="btn btn-social-icon mr-1 mb-1 btn-outline-github"
                           >
                             <span className="la la-github font-medium-4" />
-                          </a>
+                          </Link>
                         </div>
                         <p className="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
                           <span>OR Using Account Details</span>
@@ -122,13 +122,13 @@ export const Login = () => {
                           <span>New to Modern ?</span>
                         </p>
                         <div className="card-body">
-                          <a
-                            href="register-with-bg-image.html"
+                          <Link
+                            to="/register"
                             className="btn btn-outline-danger btn-block"
                           >
                             <i className="la la-user" />
                             Register
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
