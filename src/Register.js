@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Authentication.css'
+import logo from './assets/logo-dark.png'
 export const Register = () => {
   return (
     <>
-      <div className="app-content content">
+      <div className="app-content content bg-full-screen-image blank-page">
         <div className="content-header row"></div>
         <div className="content-overlay" />
         <div className="content-wrapper">
@@ -15,7 +17,7 @@ export const Register = () => {
                     <div className="card-header border-0 pb-0">
                       <div className="card-title text-center">
                         <img
-                          src="../../../app-assets/images/logo/logo-dark.png"
+                          src={logo}
                           alt="branding logo"
                         />
                       </div>
@@ -25,8 +27,8 @@ export const Register = () => {
                     </div>
                     <div className="card-content">
                       <div className="text-center">
-                        <Link
-                          onTouchStartCapture="#"
+                        <Link   
+                          to="#"
                           className="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"
                         >
                           <span className="la la-facebook" />
@@ -56,7 +58,7 @@ export const Register = () => {
                       <div className="card-body">
                         <form
                           className="form-horizontal"
-                          action="index.html"
+                          action=""
                           noValidate
                         >
                           <fieldset className="form-group position-relative has-icon-left">
