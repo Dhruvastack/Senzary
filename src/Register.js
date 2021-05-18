@@ -29,25 +29,25 @@ export const Register = () => {
                       <div className="text-center">
                         <Link   
                           to="#"
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"
+                          className="btn btn-social-icon  btn-outline-facebook"
                         >
                           <span className="la la-facebook" />
                         </Link>
                         <Link
                           to="#"
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-twitter"
+                          className="btn btn-social-icon  btn-outline-twitter"
                         >
                           <span className="la la-twitter" />
                         </Link>
                         <Link
                           to="#"
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-linkedin"
+                          className="btn btn-social-icon  btn-outline-linkedin"
                         >
                           <span className="la la-linkedin font-medium-4" />
                         </Link>
                         <Link
                           to="#"
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-github"
+                          className="btn btn-social-icon  btn-outline-github"
                         >
                           <span className="la la-github font-medium-4" />
                         </Link>

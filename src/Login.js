@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Authentication.css";
-import logo from './assets/logo-dark.png'
+import logo from "./assets/logo-dark.png";
 export const Login = () => {
   return (
     <>
@@ -16,10 +16,7 @@ export const Login = () => {
                   <div className="card border-grey border-lighten-3 px-1 py-1 m-0">
                     <div className="card-header border-0">
                       <div className="card-title text-center">
-                        <img
-                          src={logo}
-                          alt="branding logo"
-                        />
+                        <img src={logo} alt="branding logo" />
                       </div>
                       <h6 className="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
                         <span>Easily Using</span>
@@ -29,27 +26,27 @@ export const Login = () => {
                       <div className="text-center">
                         <Link
                           to={{ pathname: "#" }}
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"
+                          className="btn btn-social-icon  btn-outline-facebook"
                         >
                           <span className="la la-facebook" />
                         </Link>
                         <Link
                           to={{ pathname: "#" }}
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-twitter"
+                          className="btn btn-social-icon  btn-outline-twitter"
                         >
                           <span className="la la-twitter" />
                         </Link>
 
                         <Link
                           to={{ pathname: "https://twitter.com#" }}
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-linkedin"
+                          className="btn btn-social-icon  btn-outline-linkedin"
                           target="_blank"
                         >
                           <span className="la la-linkedin font-medium-4" />
                         </Link>
                         <Link
                           to={{ pathname: "#" }}
-                          className="btn btn-social-icon mr-1 mb-1 btn-outline-github"
+                          className="btn btn-social-icon  btn-outline-github"
                         >
                           <span className="la la-github font-medium-4" />
                         </Link>
@@ -63,7 +60,7 @@ export const Login = () => {
                           action="index.html"
                           noValidate
                         >
-                          <fieldset className="form-group position-relative float-left">
+                          <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="text"
                               className="form-control"
@@ -95,12 +92,10 @@ export const Login = () => {
                                   id="remember-me"
                                   className="chk-remember"
                                 />
-                                <label htmlFor="remember-me">
-                                  {" "}
-                                  Remember Me
-                                </label>
+                                <label htmlFor="remember-me">Remember Me</label>
                               </fieldset>
                             </div>
+
                             <div className="col-sm-6 col-12 float-sm-left text-center text-sm-right">
                               <Link
                                 to="recover-password.html"
@@ -139,6 +134,5 @@ export const Login = () => {
         </div>
       </div>
     </>
-  
   );
 };

@@ -64,3 +64,20 @@
     background: #fff;
     padding: 0 10px;
 }
+
+.btn-social-icon {
+   margin-right: 1rem;
+   margin-bottom: 1.5rem;
+}
+form .form-group {
+    margin-bottom: 1.5rem;
+}
+.has-icon-left .form-control {
+    padding-right: 1rem;
+    padding-left: calc(1.25em + 1.5rem + 2px);
+}
+.has-icon-left .form-control-position {
+    right: auto;
+    left: inherit;
+}
+
