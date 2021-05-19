@@ -8,7 +8,6 @@ export const Login = () => {
       <div className="app-content content bg-full-screen-image blank-page">
         <div className="content-overlay" />
         <div className="content-wrapper">
-          <div className="content-header row"></div>
           <div className="content-body">
             <section className="row flexbox-container">
               <div className="col-12 d-flex align-items-center justify-content-center">
@@ -63,7 +62,7 @@ export const Login = () => {
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="text"
-                              className="form-control"
+                              className="form-control disable-outline"
                               id="user-name"
                               placeholder="Your Username"
                               required
@@ -75,7 +74,7 @@ export const Login = () => {
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="password"
-                              className="form-control"
+                              className="form-control disable-outline"
                               id="user-password"
                               placeholder="Enter Password"
                               required
@@ -107,7 +106,7 @@ export const Login = () => {
                           </div>
                           <button
                             type="submit"
-                            className="btn btn-outline-info btn-block"
+                            className="btn btn-outline-info w-100"
                           >
                             <i className="ft-unlock" /> Login
                           </button>
@@ -119,7 +118,7 @@ export const Login = () => {
                       <div className="card-body">
                         <Link
                           to="/register"
-                          className="btn btn-outline-danger btn-block"
+                          className="btn btn-outline-danger w-100"
                         >
                           <i className="la la-user" />
                           Register

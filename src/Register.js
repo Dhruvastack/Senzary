@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Authentication.css'
-import logo from './assets/logo-dark.png'
+import "./Authentication.css";
+import logo from "./assets/logo-dark.png";
 export const Register = () => {
   return (
     <>
@@ -16,10 +16,7 @@ export const Register = () => {
                   <div className="card border-grey border-lighten-3 px-1 py-1 m-0">
                     <div className="card-header border-0 pb-0">
                       <div className="card-title text-center">
-                        <img
-                          src={logo}
-                          alt="branding logo"
-                        />
+                        <img src={logo} alt="branding logo" />
                       </div>
                       <h6 className="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
                         <span>Easily Using</span>
@@ -27,7 +24,7 @@ export const Register = () => {
                     </div>
                     <div className="card-content">
                       <div className="text-center">
-                        <Link   
+                        <Link
                           to="#"
                           className="btn btn-social-icon  btn-outline-facebook"
                         >
@@ -56,11 +53,7 @@ export const Register = () => {
                         <span>OR Using Email</span>
                       </p>
                       <div className="card-body">
-                        <form
-                          className="form-horizontal"
-                          action=""
-                          noValidate
-                        >
+                        <form className="form-horizontal" action="" noValidate>
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="text"
@@ -97,17 +90,36 @@ export const Register = () => {
                             </div>
                           </fieldset>
                           <div className="form-group row">
-                            <div className="col-sm-6 col-12 text-center text-sm-left pr-0">
+                            <div className="col-sm-6 col-12 text-center text-sm-left ">
                               <fieldset>
-                                <input
-                                  type="checkbox"
-                                  id="remember-me"
-                                  className="chk-remember"
-                                />
-                                <label htmlFor="remember-me">
+                                <div
+                                  className="icheckbox_square-blue"
+                                  style={{ position: "relative" }}
+                                >
+                                  <input
+                                    type="checkbox"
+                                    id="remember-me"
+                                    className="chk-remember"
+                                    style={{ position: "absolute", 
+                                   
+                                    display: "block",
+                                    width: "22px",
+                                    height: "22px",
+                                  
+                                    background: "rgb(255, 255, 255)",
+                                    border: 0,
+                                 
+                                  
+                                  }}
+                                  />
+                                  <label htmlFor="remember-me">
                                   {" "}
                                   Remember Me
                                 </label>
+                                </div>
+
+                          
+                               
                               </fieldset>
                             </div>
                             <div className="col-sm-6 col-12 float-sm-left text-center text-sm-right">
@@ -121,17 +133,14 @@ export const Register = () => {
                           </div>
                           <button
                             type="submit"
-                            className="btn btn-outline-info btn-block"
+                            className="btn btn-outline-info w-100"
                           >
                             <i className="la la-user" /> Register
                           </button>
                         </form>
                       </div>
                       <div className="card-body">
-                        <Link
-                          to="/"
-                          className="btn btn-outline-danger btn-block"
-                        >
+                        <Link to="/" className="btn btn-outline-danger w-100">
                           <i className="ft-unlock" />
                           Login
                         </Link>
