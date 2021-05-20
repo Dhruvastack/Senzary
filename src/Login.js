@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Authentication.css";
 import logo from "./assets/logo-dark.png";
+import { createLogin } from "./Auth/actions";
+
+import { useDispatch, useSelector } from "react-redux";
+
+
+
+
+
 export const Login = () => {
+
+  const [login, setLogin] = useState({ email: "", password: "" });
+
+  const handleChange = (e) => {
+    setLogin({
+      ...login,
+      [e.target.name]: e.target.value,
+    });
+  };
+  console.log("handle", login);
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createLogin(login));
+    console.log("handle>>>", login);
+  };
   return (
     <>
       <div className="app-content content bg-full-screen-image blank-page">
@@ -56,8 +80,7 @@ export const Login = () => {
                       <div className="card-body">
                         <form
                           className="form-horizontal"
-                          action="index.html"
-                          noValidate
+                          onSubmit={handleSubmit}
                         >
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
@@ -66,6 +89,8 @@ export const Login = () => {
                               id="user-name"
                               placeholder="Your Username"
                               required
+                              value={login.email}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-user" />
@@ -78,20 +103,40 @@ export const Login = () => {
                               id="user-password"
                               placeholder="Enter Password"
                               required
+                              value={login.password}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-key" />
                             </div>
                           </fieldset>
                           <div className="form-group row">
-                            <div className="col-sm-6 col-12 text-center text-sm-left pr-0">
+                            <div className="col-sm-6 col-12 text-center text-sm-left ">
                               <fieldset>
-                                <input
-                                  type="checkbox"
-                                  id="remember-me"
-                                  className="chk-remember"
-                                />
-                                <label htmlFor="remember-me">Remember Me</label>
+                                <div
+                                  className="icheckbox_square-blue"
+                                  style={{ position: "relative" }}
+                                >
+                                  <input
+                                    type="checkbox"
+                                    id="remember-me"
+                                    className="chk-remember"
+                                    style={{
+                                      position: "absolute",
+
+                                      display: "block",
+                                      width: "22px",
+                                      height: "22px",
+
+                                      background: "rgb(255, 255, 255)",
+                                      border: 0,
+                                    }}
+                                  />
+                                  <label htmlFor="remember-me">
+
+                                    Remember Me
+                                  </label>
+                                </div>
                               </fieldset>
                             </div>
 

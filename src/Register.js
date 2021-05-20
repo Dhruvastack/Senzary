@@ -54,17 +54,31 @@ export const Register = () => {
                       </p>
                       <div className="card-body">
                         <form className="form-horizontal" action="" noValidate>
-                          <fieldset className="form-group position-relative has-icon-left">
+                          <div className="row">
+                          <fieldset className="col form-group position-relative has-icon-left">
                             <input
                               type="text"
                               className="form-control"
                               id="user-name"
-                              placeholder="User Name"
+                              placeholder="First Name"
                             />
                             <div className="form-control-position">
                               <i className="la la-user" />
                             </div>
                           </fieldset>
+                          <fieldset className="col form-group position-relative has-icon-left">
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="user-name"
+                              placeholder="Last Name"
+                            />
+                            <div className="form-control-position">
+                              <i className="la la-user" />
+                            </div>
+                          </fieldset>
+                          </div>
+                         
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="email"
@@ -82,7 +96,20 @@ export const Register = () => {
                               type="password"
                               className="form-control"
                               id="user-password"
-                              placeholder="Enter Password"
+                              placeholder="Create Password"
+                              required
+                            />
+                            <div className="form-control-position">
+                              <i className="la la-key" />
+                            </div>
+                          </fieldset>
+
+                          <fieldset className="form-group position-relative has-icon-left">
+                            <input
+                              type="password"
+                              className="form-control"
+                              id="user-password"
+                              placeholder="Repeat Password"
                               required
                             />
                             <div className="form-control-position">
