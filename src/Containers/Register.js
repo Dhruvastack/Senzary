@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Authentication.css";
-import logo from "./assets/logo-dark.png";
+import "../css/Authentication.css";
+import logo from "../assets/logo-dark.png";
 export const Register = () => {
   return (
     <>

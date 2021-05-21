@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Authentication.css";
-import logo from "./assets/logo-dark.png";
-import { createLogin } from "./Auth/actions";
+import "../css/Authentication.css";
+import logo from "../assets/logo-dark.png";
+import { createLogin } from "../Stores/Auth/actions";
+import {
+  
+  Box
 
+} from '@material-ui/core';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
-
-
-
-
-
+const FlexContainer = ({ children, ...rest }) => {
+  return (
+    <Box display="flex" flexDirection="row" {...rest}>
+      {children}
+    </Box>
+  );
+};
 export const Login = () => {
-
-  const [login, setLogin] = useState({ email: "", password: "" });
+  const [login, setLogin] = useState({ username: "", password: "" });
 
   const handleChange = (e) => {
     setLogin({
@@ -26,6 +32,9 @@ export const Login = () => {
     e.preventDefault();
     dispatch(createLogin(login));
     console.log("handle>>>", login);
+  };
+  FlexContainer.propTypes = {
+    children: PropTypes.node,
   };
   return (
     <>
@@ -84,14 +93,17 @@ export const Login = () => {
                         >
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
-                              type="text"
+                              type="email"
                               className="form-control disable-outline"
-                              id="user-name"
-                              placeholder="Your Username"
+                              id="username"
+                              name="username"
                               required
-                              value={login.email}
+                              placeholder="Your Username"
+                              autoComplete="off"
+                              value={login.username}
                               onChange={handleChange}
                             />
+                           
                             <div className="form-control-position">
                               <i className="la la-user" />
                             </div>
@@ -100,12 +112,15 @@ export const Login = () => {
                             <input
                               type="password"
                               className="form-control disable-outline"
-                              id="user-password"
-                              placeholder="Enter Password"
+                              id="password"
+                              name="password"
                               required
+                              data-validation-required-message="Please enter your password"
+                              autoComplete="off"
                               value={login.password}
                               onChange={handleChange}
                             />
+
                             <div className="form-control-position">
                               <i className="la la-key" />
                             </div>
@@ -133,7 +148,6 @@ export const Login = () => {
                                     }}
                                   />
                                   <label htmlFor="remember-me">
-
                                     Remember Me
                                   </label>
                                 </div>
