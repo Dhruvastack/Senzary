@@ -7,6 +7,8 @@ import {
   createLoginFailure,
   createPasswordSuccess,
   createPasswordFailure,
+  createRegistrationSuccess,
+  createRegistrationFailure
 } from "./actions";
 import { successAlert, errorAlert } from "../Alerts/actions";
 const BACKEND_URI = "http://demo.thingsboard.io/api";
@@ -24,11 +26,9 @@ function* addLogin({ payload }) {
     console.log("response>>>", response);
     yield put(createLoginSuccess({ data: response.data }));
     history.push("/dashboard");
-    // yield put(successAlert(response.data.message));
   } catch (error) {
     yield put(createLoginFailure(error));
     yield put(errorAlert(error.response.data.message));
-    //alert(error.response.data.message)
     console.log("error>>>", error.response.data.message);
   }
 }
@@ -59,4 +59,28 @@ function* addPassword({ payload }) {
 
 export function* authPasswordSaga() {
   yield takeEvery(types.CREATE_PASSWORD, addPassword);
+}
+//Register Saga
+
+
+function* addRegistration({ payload }) {
+  try {
+    const response = yield call(
+      axios.post,
+      `${BACKEND_URI}/noauth/signup`,
+      payload
+    );
+
+    console.log("response>>>", response);
+    yield put(createRegistrationSuccess({ data: response.data }));
+    history.push("/dashboard");
+  } catch (error) {
+    yield put(createRegistrationFailure(error));
+    yield put(errorAlert(error.response.data.message));
+    console.log("error>>>", error.response.data.message);
+  }
+}
+
+export function* authRegistrationSaga() {
+  yield takeEvery(types.CREATE_REGISTRATION, addRegistration);
 }

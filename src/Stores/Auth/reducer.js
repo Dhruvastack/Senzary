@@ -48,6 +48,27 @@ export default function authReducer(state = initialState, action) {
         error: action.error,
       };
 
+    // register functionality
+
+    case types.CREATE_REGISTRATION:
+      return {
+        ...state,
+        loading: true,
+      };
+    case types.CREATE_REGISTRATION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        login: action.payload,
+        error: {},
+      };
+    case types.CREATE_REGISTRATION_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.error,
+      };
+
     default:
       return state;
   }

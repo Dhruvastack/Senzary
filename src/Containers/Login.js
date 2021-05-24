@@ -3,14 +3,9 @@ import { Link } from "react-router-dom";
 import "../css/Authentication.css";
 import logo from "../assets/logo-dark.png";
 import { createLogin } from "../Stores/Auth/actions";
-import {
-  
-  Box
 
-} from '@material-ui/core';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
-import Alerts from "../Alerts";
+
 
 
 export const Login = () => {

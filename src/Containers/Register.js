@@ -1,8 +1,39 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Link } from "react-router-dom";
 import "../css/Authentication.css";
 import logo from "../assets/logo-dark.png";
+import { createRegistration } from "../Stores/Auth/actions";
+
+import { useDispatch } from "react-redux";
+
 export const Register = () => {
+  const [register,setRegister] =useState({email:"",firstName:"",lastName:"",recaptchaResponse:""})
+
+
+
+
+
+
+  const handleChange = (e) => {
+    setRegister({
+      ...register,
+      [e.target.name]: e.target.value,
+    });
+  };
+  console.log("handle", register);
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createRegistration(register));
+    console.log("handle>>>", register);
+  };
+
+
+
+
+
+
+
   return (
     <>
       <div className="app-content content bg-full-screen-image blank-page">
@@ -53,25 +84,35 @@ export const Register = () => {
                         <span>OR Using Email</span>
                       </p>
                       <div className="card-body">
-                        <form className="form-horizontal" action="" noValidate>
+                        <form className="form-horizontal" onSubmit={handleSubmit}>
                           <div className="row">
                           <fieldset className="col form-group position-relative has-icon-left">
                             <input
                               type="text"
-                              className="form-control"
-                              id="user-name"
+                              className="form-control disable-outline"
+                              id="first-name"
+                              name="firstName"
                               placeholder="First Name"
+                              required
+                              autoComplete="off"
+                              value={register.firstName}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-user" />
                             </div>
                           </fieldset>
                           <fieldset className="col form-group position-relative has-icon-left">
-                            <input
+                          <input
                               type="text"
-                              className="form-control"
-                              id="user-name"
+                              className="form-control disable-outline"
+                              id="last-name"
+                              name="lastName"
                               placeholder="Last Name"
+                              required
+                              autoComplete="off"
+                              value={register.lastName}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-user" />
@@ -80,12 +121,16 @@ export const Register = () => {
                           </div>
                          
                           <fieldset className="form-group position-relative has-icon-left">
-                            <input
+                          <input
                               type="email"
-                              className="form-control"
-                              id="user-email"
-                              placeholder="Your Email Address"
+                              className="form-control disable-outline"
+                              id="email"
+                              name="email"
                               required
+                              placeholder="Email"
+                              autoComplete="off"
+                              value={register.email}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-envelope" />
@@ -94,10 +139,13 @@ export const Register = () => {
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="password"
-                              className="form-control"
+                              className="form-control disable-outline"
                               id="user-password"
                               placeholder="Create Password"
                               required
+                              autoComplete="off"
+                              value={register.password}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-key" />
