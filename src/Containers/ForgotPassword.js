@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo-dark.png";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { createPassword } from "../Stores/Auth/actions";
 export const ForgotPassword = () => {
+  const [password, setPassword] = useState({ email:"" });
+
+  const handleChange = (e) => {
+    setPassword({
+      ...password,
+      [e.target.name]: e.target.value,
+    });
+  };
+  console.log("handle", password);
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createPassword(password));
+    console.log("handle>>>", password);
+  };
   return (
     <div
       className="app_forgot vertical-layout vertical-menu-modern 1-column   blank-page"
@@ -29,17 +46,21 @@ export const ForgotPassword = () => {
                     <div className="card-content">
                       <div className="card-body">
                         <form
-                          className="form-horizontal"
-                          action="login-simple.html"
-                          noValidate
+                           className="form-horizontal"
+                           onSubmit={handleSubmit}
                         >
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="email"
                               className="form-control disable-outline"
-                              id="user-email"
+                              id="email"
+                              name="email"
                               placeholder="Your Email Address"
                               required
+
+                              autoComplete="off"
+                              value={password.email}
+                              onChange={handleChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-envelope" />
@@ -47,7 +68,7 @@ export const ForgotPassword = () => {
                           </fieldset>
                           <button
                             type="submit"
-                            className="btn btn-outline-info btn-lg btn-block"
+                            className="btn btn-outline-info btn-lg w-100"
                           >
                             <i className="ft-unlock" /> Recover Password
                           </button>
@@ -56,7 +77,7 @@ export const ForgotPassword = () => {
                     </div>
                     <div className="card-footer border-0">
                       <p className="float-sm-left text-center">
-                        <Link to="/login" className="card-link">
+                        <Link to="/" className="card-link">
                           Login
                         </Link>
                       </p>

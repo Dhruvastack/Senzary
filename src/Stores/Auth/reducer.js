@@ -7,14 +7,17 @@ const initialState = {
 
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
+
+
+    //Login functionality
     case types.CREATE_LOGIN:
-      debugger;
+     
       return {
         ...state,
         loading: true,
       };
     case types.CREATE_LOGIN_SUCCESS:
-      debugger;
+     
       return {
         ...state,
         loading: false,
@@ -22,12 +25,46 @@ export default function authReducer(state = initialState, action) {
         error: {},
       };
     case types.CREATE_LOGIN_FAILURE:
-      debugger;
+ 
       return {
         ...state,
         loading: false,
         error: action.error,
       };
+
+//Password functionality
+
+
+
+case types.CREATE_PASSWORD:
+     
+      return {
+        ...state,
+        loading: true,
+      };
+    case types.CREATE_PASSWORD_SUCCESS:
+     
+      return {
+        ...state,
+        loading: false,
+        password: action.payload,
+        error: {},
+      };
+    case types.CREATE_PASSWORD_FAILURE:
+ 
+      return {
+        ...state,
+        loading: false,
+        error: action.error,
+      };
+
+
+
+
+
+
+
+
     default:
       return state;
   }

@@ -113,6 +113,7 @@ export const Login = () => {
                               type="password"
                               className="form-control disable-outline"
                               id="password"
+                              placeholder="Password"
                               name="password"
                               required
                               data-validation-required-message="Please enter your password"
