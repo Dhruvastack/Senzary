@@ -1,11 +1,17 @@
 import { takeEvery, call, put } from "redux-saga/effects";
 import { types } from "./constants";
 import axios from "axios";
-import { createLoginSuccess, createLoginFailure ,createPasswordSuccess, createPasswordFailure} from "./actions";
-import { successAlert, errorAlert } from '../Alerts/actions';
-const BACKEND_URI ="http://demo.thingsboard.io/api";
+import history from "../../utils/history";
+import {
+  createLoginSuccess,
+  createLoginFailure,
+  createPasswordSuccess,
+  createPasswordFailure,
+} from "./actions";
+import { successAlert, errorAlert } from "../Alerts/actions";
+const BACKEND_URI = "http://demo.thingsboard.io/api";
 
-
+console.log("history", history);
 //Login Saga
 function* addLogin({ payload }) {
   try {
@@ -17,13 +23,14 @@ function* addLogin({ payload }) {
 
     console.log("response>>>", response);
     yield put(createLoginSuccess({ data: response.data }));
+    history.push("/dashboard");
+    // yield put(successAlert(response.data.message));
   } catch (error) {
     yield put(createLoginFailure(error));
     yield put(errorAlert(error.response.data.message));
-    alert(error.response.data.message)
-    console.log("error>>>",error.response.data.message)
+    //alert(error.response.data.message)
+    console.log("error>>>", error.response.data.message);
   }
-  
 }
 
 export function* authSaga() {
@@ -45,10 +52,9 @@ function* addPassword({ payload }) {
   } catch (error) {
     yield put(createPasswordFailure(error));
     yield put(errorAlert(error.response.data.message));
-    alert(error.response.data.message)
-    console.log("error>>>",error.response.data.message)
+    alert(error.response.data.message);
+    console.log("error>>>", error.response.data.message);
   }
-  
 }
 
 export function* authPasswordSaga() {

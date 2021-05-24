@@ -4,12 +4,12 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 import Alert from '@material-ui/lab/Alert';
 
-import { removeAlert } from '../../Stores/Alerts/actions';
+import { removeAlert } from '../Stores/Alerts/actions';
 
 export default function WarningSnackbar() {
   const dispatch = useDispatch();
   const { warningSnackBarMessage, warningSnackBarOpen } = useSelector(
-    (state) => state.AlertReducer,
+    (state) => state.alertProviderReducer,
   );
   useEffect(() => {
     if (warningSnackBarOpen)

@@ -24,6 +24,8 @@ export default function alertProviderReducer(state = initialState, action) {
         successSnackBarMessage: action.payload,
       };
     case types.ERROR_SNACKBAR:
+      console.log(action.payload);
+      debugger;
       return {
         ...state,
         errorSnackBarOpen: true,
@@ -38,9 +40,25 @@ export default function alertProviderReducer(state = initialState, action) {
       };
 
     case types.CLEAR_SNACKBAR:
-      return {
-        ...state,
-      };
+      if (action.payload === "success") {
+        return {
+          ...state,
+          successSnackBarOpen: false,
+          successSnackBarMessage: "",
+        };
+      } else if (action.payload === "warning") {
+        return {
+          ...state,
+          warningSnackBarOpen: false,
+          warningSnackBarMessage: "",
+        };
+      } else if (action.payload === "error") {
+        return {
+          ...state,
+          errorSnackBarOpen: false,
+          errorSnackBarMessage: "",
+        };
+      }
 
     default:
       return state;

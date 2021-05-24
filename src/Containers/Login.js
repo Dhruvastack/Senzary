@@ -10,13 +10,9 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
-const FlexContainer = ({ children, ...rest }) => {
-  return (
-    <Box display="flex" flexDirection="row" {...rest}>
-      {children}
-    </Box>
-  );
-};
+import Alerts from "../Alerts";
+
+
 export const Login = () => {
   const [login, setLogin] = useState({ username: "", password: "" });
 
@@ -33,9 +29,7 @@ export const Login = () => {
     dispatch(createLogin(login));
     console.log("handle>>>", login);
   };
-  FlexContainer.propTypes = {
-    children: PropTypes.node,
-  };
+  
   return (
     <>
       <div className="app-content content bg-full-screen-image blank-page">
@@ -192,6 +186,7 @@ export const Login = () => {
           </div>
         </div>
       </div>
+   
     </>
   );
 };
