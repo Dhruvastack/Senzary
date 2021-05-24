@@ -157,7 +157,7 @@ export const Login = () => {
 
                             <div className="col-sm-6 col-12 float-sm-left text-center text-sm-right">
                               <Link
-                                to="recover-password.html"
+                                to="forgot-password"
                                 className="card-link"
                               >
                                 Forgot Password?
