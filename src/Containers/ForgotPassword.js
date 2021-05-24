@@ -75,13 +75,13 @@ export const ForgotPassword = () => {
                         </form>
                       </div>
                     </div>
-                    <div className="card-footer border-0">
-                      <p className="float-sm-left text-center">
+                    <div className="card-footer bg-white border-0">
+                      <p className="float-sm-start text-center">
                         <Link to="/" className="card-link">
                           Login
                         </Link>
                       </p>
-                      <p className="float-sm-right text-center">
+                      <p className="float-sm-end text-center">
                         New to Modern ?{" "}
                         <Link to="/register" className="card-link">
                           Create Account
